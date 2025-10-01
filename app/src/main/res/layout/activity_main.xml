@@ -5,8 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:background="#262525"
     tools:context=".MainActivity">
 
     <!--Поле результата-->
@@ -14,188 +12,285 @@
         android:id="@+id/tvResultField"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_marginTop="25dp"
-        android:textSize="18sp"
+        android:layout_marginTop="50dp"
         android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/tvOperationFiled"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!--поле знака операции-->
     <TextView
         android:id="@+id/tvOperationFiled"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="50dp"
         android:textColor="@color/white"
+        android:textSize="36sp"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@id/tvResultField"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!--поле ввода чисел-->
     <EditText
         android:id="@+id/etNumberField"
-        android:textColor="@color/white"
         android:layout_width="0dp"
-        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="36sp"
+        android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvResultField" />
 
     <LinearLayout
-        android:id="@+id/llFirstButtonPanel"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etNumberField">
+        android:layout_marginHorizontal="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
-            android:id="@+id/btnN7"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/llCancelButtonPanel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="7" />
+            android:layout_marginTop="16dp">
 
-        <Button
-            android:id="@+id/btnN8"
-            android:layout_width="0dp"
+            <android.widget.Button
+                android:id="@+id/btnClearResult"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="C" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFirstButtonPanel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="8" />
+            android:layout_marginTop="16dp">
 
-        <Button
-            android:id="@+id/btnN9"
-            android:layout_width="0dp"
+            <android.widget.Button
+                android:id="@+id/btnN7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="7" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnN8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="8" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnN9"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="9" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnDiv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="/" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSecondButtonPanel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="9" />
+            android:layout_marginTop="16dp">
 
-        <Button
-            android:id="@+id/btnDiv"
-            android:layout_width="0dp"
+            <android.widget.Button
+                android:id="@+id/btnN4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="4" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnN5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="5" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnN6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="6" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnMul"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="*" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llThirdButtonPanel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="/" />
-    </LinearLayout>
+            android:layout_marginTop="16dp">
 
-    <LinearLayout
-        android:id="@+id/llSecondButtonPanel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llFirstButtonPanel">
+            <android.widget.Button
+                android:id="@+id/btnN1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="1" />
 
-        <Button
-            android:id="@+id/btnN4"
-            android:layout_width="0dp"
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnN2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="2" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnN3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="3" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.widget.Button
+                android:id="@+id/btnSub"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="-" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llFourthButtonPanel"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="4" />
+            android:layout_marginTop="16dp">
 
-        <Button
-            android:id="@+id/btnN5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="5" />
+            <android.widget.Button
+                android:id="@+id/btnN0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="0" />
 
-        <Button
-            android:id="@+id/btnN6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="6" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/btnMul"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="*" />
-    </LinearLayout>
+            <android.widget.Button
+                android:id="@+id/btnComma"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="," />
 
-    <LinearLayout
-        android:id="@+id/llThirdButtonPanel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llSecondButtonPanel">
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/btnN1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1" />
+            <android.widget.Button
+                android:id="@+id/btnAdd"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:background="@drawable/selector_button_background"
+                android:text="+" />
 
-        <Button
-            android:id="@+id/btnN2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2" />
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/btnN3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="3" />
-
-        <Button
-            android:id="@+id/btnSub"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="-" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llFourthButtonPanel"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/llThirdButtonPanel">
-
-        <Button
-            android:id="@+id/btnN0"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="0" />
-
-        <Button
-            android:id="@+id/btnComma"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="," />
-
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="+" />
-
-        <Button
-            android:id="@+id/btnEq"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="=" />
+            <android.widget.Button
+                android:id="@+id/btnEq"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/selector_button_background"
+                android:text="=" />
+        </LinearLayout>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

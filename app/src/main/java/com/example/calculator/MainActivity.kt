@@ -41,12 +41,14 @@ class MainActivity : AppCompatActivity() {
             btnN7.setOnClickListener { onNumberClick(btnN7.text.toString()) }
             btnN8.setOnClickListener { onNumberClick(btnN8.text.toString()) }
             btnN9.setOnClickListener { onNumberClick(btnN9.text.toString()) }
+            btnClearResult.setOnClickListener { onClearResult() }
         }
     }
 
     private fun onOperationClick(operation: String) {
         binding.tvOperationFiled.text = operation
-        binding.tvResultField.text = binding.etNumberField.text
+        if (binding.etNumberField.text.isNotEmpty()) binding.tvResultField.text =
+            binding.etNumberField.text
         binding.etNumberField.text.clear()
         flagDouble = false
     }
@@ -82,7 +84,7 @@ class MainActivity : AppCompatActivity() {
                 binding.tvOperationFiled.text.toString()
             ).toString()
         }
-        binding.tvResultField.text = result
+        binding.tvResultField.text = result.replace(",", ".")
         flagDouble = false
         binding.etNumberField.text.clear()
     }
@@ -96,6 +98,10 @@ class MainActivity : AppCompatActivity() {
             else -> 0.0
         }
 
+    }
+
+    private fun onClearResult() {
+        binding.tvResultField.text = ""
     }
 
 }
